@@ -1,0 +1,20 @@
+2022-03-16 08:28:43.900 [blc-master:3306] ERROR io.debezium.connector.mysql.BinlogReader - Error during binlog processing. Last offset stored = null, binlog reader near position = binlog.000004/3669638
+2022-03-16 08:28:44.187 [debezium-engine] ERROR c.a.ververica.cdc.debezium.DebeziumSourceFunction - Reporting error:
+org.apache.kafka.connect.errors.ConnectException: Software caused connection abort: recv failed
+	at io.debezium.connector.mysql.AbstractReader.wrap(AbstractReader.java:241)
+	at io.debezium.connector.mysql.AbstractReader.failed(AbstractReader.java:207)
+	at io.debezium.connector.mysql.BinlogReader$ReaderThreadLifecycleListener.onCommunicationFailure(BinlogReader.java:1142)
+	at com.github.shyiko.mysql.binlog.BinaryLogClient.listenForEventPackets(BinaryLogClient.java:962)
+	at com.github.shyiko.mysql.binlog.BinaryLogClient.connect(BinaryLogClient.java:595)
+	at com.github.shyiko.mysql.binlog.BinaryLogClient$7.run(BinaryLogClient.java:839)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.github.shyiko.mysql.binlog.io.BufferedSocketInputStream.read(BufferedSocketInputStream.java:51)
+	at com.github.shyiko.mysql.binlog.io.ByteArrayInputStream.readWithinBlockBoundaries(ByteArrayInputStream.java:205)
+	at com.github.shyiko.mysql.binlog.io.ByteArrayInputStream.peek(ByteArrayInputStream.java:177)
+	at com.github.shyiko.mysql.binlog.BinaryLogClient.listenForEventPackets(BinaryLogClient.java:919)
+	... 3 common frames omitted

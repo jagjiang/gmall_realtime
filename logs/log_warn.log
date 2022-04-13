@@ -1,0 +1,913 @@
+2022-03-18 09:34:49.651 [main] WARN  o.apache.flink.runtime.webmonitor.WebMonitorUtils - Log file environment variable 'log.file' is not set.
+2022-03-18 09:34:49.653 [main] WARN  o.apache.flink.runtime.webmonitor.WebMonitorUtils - JobManager log files are unavailable in the web dashboard. Log file location not found in environment variable 'log.file' or configuration key 'web.log.path'.
+2022-03-18 09:34:50.848 [mini-cluster-io-thread-12] WARN  org.apache.flink.runtime.util.HadoopUtils - Could not find Hadoop configuration via any of the supported methods (Flink configuration, environment variables).
+2022-03-18 09:34:53.510 [Source: Custom Source (2/8)#0] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#0 (f9d5a985b12c3fec68766dc6f5e54ffe) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:34:53.510 [Source: Custom Source (3/8)#0] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#0 (586a0b3151afdfdf91aaa85f742c8e9c) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:34:54.753 [Source: Custom Source (3/8)#1] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#1 (1ecece2a9791d9fad811897b6c99728c) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:34:54.774 [Source: Custom Source (2/8)#1] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#1 (cab5c568e5d68f42c83fbc06e92101ee) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:34:55.985 [Source: Custom Source (3/8)#2] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#2 (0bf968d68f167d8fafd088a5461c0cb1) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:34:56.031 [Source: Custom Source (2/8)#2] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#2 (2bf570d5035cd2bbf8e634a3426d10d0) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:34:57.350 [Source: Custom Source (3/8)#3] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#3 (b2eaa2326b772d456f4f7970dab6e337) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:34:57.351 [Source: Custom Source (2/8)#3] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#3 (3a523e8d3cb360b57d670a9fc7af42cb) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:34:58.659 [Source: Custom Source (2/8)#4] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#4 (17959caefd136fbe0226145ba28faf4d) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:34:59.822 [Source: Custom Source (3/8)#5] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#5 (530bffe143f16eeafce1287d84a72f0e) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:01.008 [Source: Custom Source (2/8)#6] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#6 (e6b85d2080f89d5d295990dba26e2e83) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:02.188 [Source: Custom Source (2/8)#7] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#7 (d5dc7933c1e6f47414680a2dad1ffa82) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:03.319 [Source: Custom Source (2/8)#8] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#8 (22f11ed13333986bfbd8981015ba12fe) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:03.329 [Source: Custom Source (3/8)#8] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#8 (751e47b9f25206cee9d4012393e7d458) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:04.445 [Source: Custom Source (3/8)#9] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#9 (fe19c77af70643ee73cdc7446f81ce0a) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:04.445 [Source: Custom Source (2/8)#9] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#9 (5e5d07973357397e15472bdd72f50c20) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:05.550 [Source: Custom Source (3/8)#10] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#10 (ac88c2138501af70ff35d74d183afa81) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:05.564 [Source: Custom Source (2/8)#10] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#10 (75fa14874c1557a3331d3454b78e08e4) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:06.735 [Source: Custom Source (2/8)#11] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#11 (2804e1c896685fe369504de16d7e1193) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:06.735 [Source: Custom Source (3/8)#11] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#11 (a99a7653a4d6f3441d35e84a2f8e8345) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:07.902 [Source: Custom Source (3/8)#12] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#12 (8eb6fc091a4a317ee4587c219bb6e857) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:08.996 [Source: Custom Source (2/8)#13] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#13 (748a41e013db66d12cc859d6c1698bd2) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:08.999 [Source: Custom Source (3/8)#13] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#13 (0c4ce9d81443182f144df49a76921b1d) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:10.079 [Source: Custom Source (3/8)#14] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#14 (ef367fb992a0c891416f8bff8dbd4292) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:10.082 [Source: Custom Source (2/8)#14] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#14 (487e15ae41835e567834c101b343b567) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:11.188 [Source: Custom Source (2/8)#15] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#15 (62e362fc4494364f25889dbd3969f0e7) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:12.279 [Source: Custom Source (2/8)#16] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#16 (b10f9a4eabf160c3cf370804c7460999) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:12.279 [Source: Custom Source (3/8)#16] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#16 (a9524dc004ced6418f6e842c58c09b6e) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:13.412 [Source: Custom Source (3/8)#17] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#17 (43069cdbcc7da1bd97f0aae2b00d56cc) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:14.541 [Source: Custom Source (2/8)#18] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#18 (70c5d4550f31d2e63760ec5de98ad4a6) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:14.546 [Source: Custom Source (3/8)#18] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#18 (37d14ce9427095075bdff9e5741a6a80) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:15.635 [Source: Custom Source (2/8)#19] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#19 (05d8b20bd496b152ab6e39d76e5d2dd1) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:15.635 [Source: Custom Source (3/8)#19] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#19 (0b75278e18a47ca54101b718d8950a53) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:16.714 [Source: Custom Source (2/8)#20] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (2/8)#20 (11c74932fe4222e61f781f6055bbba69) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
+2022-03-18 09:35:16.715 [Source: Custom Source (3/8)#20] WARN  org.apache.flink.runtime.taskmanager.Task - Source: Custom Source (3/8)#20 (b87eba738b169921c7848c692fe1fe0a) switched from RUNNING to FAILED.
+java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:106)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:89)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.collect(RecordWriterOutput.java:45)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:52)
+	at org.apache.flink.streaming.api.operators.CountingOutput.collect(CountingOutput.java:30)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$ManualWatermarkContext.processAndCollectWithTimestamp(StreamSourceContexts.java:310)
+	at org.apache.flink.streaming.api.operators.StreamSourceContexts$WatermarkContext.collectWithTimestamp(StreamSourceContexts.java:409)
+	at org.apache.flink.streaming.connectors.kafka.internals.AbstractFetcher.emitRecordsWithTimestamps(AbstractFetcher.java:352)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.partitionConsumerRecordsHandler(KafkaFetcher.java:181)
+	at org.apache.flink.streaming.connectors.kafka.internals.KafkaFetcher.runFetchLoop(KafkaFetcher.java:137)
+	at org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase.run(FlinkKafkaConsumerBase.java:761)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:100)
+	at org.apache.flink.streaming.api.operators.StreamSource.run(StreamSource.java:63)
+	at org.apache.flink.streaming.runtime.tasks.SourceStreamTask$LegacySourceFunctionThread.run(SourceStreamTask.java:215)
+Caused by: java.lang.RuntimeException: Could not extract key from "common":{"ar":"440000","ba":"Xiaomi","ch":"oppo","is_new":"1","md":"Xiaomi 10 Pro ","mid":"mid_19","os":"Android 11.0","uid":"50","vc":"v2.1.134"},"page":{"during_time":10170,"last_page_id":"good_detail","page_id":"login"},"ts":1608576773000}
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:59)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:35)
+	at org.apache.flink.runtime.io.network.api.writer.ChannelSelectorRecordWriter.emit(ChannelSelectorRecordWriter.java:53)
+	at org.apache.flink.streaming.runtime.io.RecordWriterOutput.pushToRecordWriter(RecordWriterOutput.java:103)
+	... 13 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.mintlolly.app.BaseLogApp.lambda$main$450c0138$1(BaseLogApp.java:43)
+	at org.apache.flink.streaming.runtime.partitioner.KeyGroupStreamPartitioner.selectChannel(KeyGroupStreamPartitioner.java:57)
+	... 16 common frames omitted
