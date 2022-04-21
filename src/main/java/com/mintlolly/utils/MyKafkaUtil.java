@@ -22,7 +22,7 @@ import java.util.Properties;
 public class MyKafkaUtil {
     final static Logger log = LoggerFactory.getLogger(MyKafkaUtil.class);
     //kafka server
-    private final static String KAFKA_BROKER = "master:9092,slave1:9092,slave2:9092";
+    private final static String KAFKA_BROKER = "101.42.251.112:9092";
     private final static String DEFAULT_TOPIC = "dwd_default_topic";
     //配置获取
     static Properties props = new Properties();

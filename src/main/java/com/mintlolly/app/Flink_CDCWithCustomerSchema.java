@@ -48,7 +48,7 @@ public class Flink_CDCWithCustomerSchema {
 //        System.setProperty("HADOOP_USER_NAME","hadoop");
         log.info("创建flink mysql cdc的source");
         SourceFunction<String> mySqlSource = MySQLSource.<String>builder()
-                .hostname("master")
+                .hostname("101.42.251.112")
                 .serverTimeZone("Asia/Shanghai")
                 .port(3306)
                 .username("root")
