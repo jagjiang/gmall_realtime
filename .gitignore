@@ -1,2 +1,17 @@
 # Project exclude paths
-/target/
+.idea
+/*/target
+/out/
+/logs/
+/zlogs/*
+/*/*.iml
+*.log
+.mvn
+*.iml
+mvnw
+mvnw.cmd
+help.md
+.project
+.settings
+.classpath
+test.html
