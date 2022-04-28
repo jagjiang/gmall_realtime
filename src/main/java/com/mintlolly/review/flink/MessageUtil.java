@@ -22,40 +22,14 @@ public class MessageUtil {
         String broker = "101.42.251.112:9092";
         String topic = "windows";
         Properties props = new Properties();
-        Random random = new Random();
         props.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,broker);
         props.setProperty(ProducerConfig.ACKS_CONFIG,"all");
         props.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,"org.apache.kafka.common.serialization.StringSerializer");
         props.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,"org.apache.kafka.common.serialization.StringSerializer");
         KafkaProducer<String, String> producer = new KafkaProducer<>(props);
-        new Thread(() -> {
-            for (int i = 0; i < 10; i++) {
-                String message = getMessage();
-                System.out.println(message);
-                producer.send(new ProducerRecord<>(topic, message));
-                producer.flush();
-                try {
-                    Thread.sleep(random.nextInt(10) * 1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-        new Thread(() -> {
-            for (int i = 0; i < 10; i++) {
-                String message = getMessage();
-                System.out.println(message);
-                producer.send(new ProducerRecord<>(topic, message));
-                producer.flush();
-                try {
-                    Thread.sleep(random.nextInt(10) * 1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
         //多线程发送数据
-
+        setMessageThread(topic,producer);
+        setMessageThread(topic,producer);
     }
     static String getMessage(){
         String[] names = {"lan", "black", "kee", "yang"};
@@ -71,5 +45,22 @@ public class MessageUtil {
         OutputStream out = socket.getOutputStream();
         out.write(message.getBytes(StandardCharsets.UTF_8));
         out.flush();
+    }
+
+    static void setMessageThread(String topic,KafkaProducer<String,String> producer){
+        Random random = new Random();
+        new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                String message = getMessage();
+                System.out.println(message);
+                producer.send(new ProducerRecord<>(topic, message));
+                producer.flush();
+                try {
+                    Thread.sleep(random.nextInt(10) * 1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }
