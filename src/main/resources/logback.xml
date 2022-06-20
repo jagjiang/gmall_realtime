@@ -180,7 +180,7 @@
     -->
 
 
-    <root level="INFO">
+    <root level="WARN">
         <appender-ref ref="CONSOLE" />
 <!--        <appender-ref ref="DEBUG_FILE" />-->
 <!--        <appender-ref ref="INFO_FILE" />-->

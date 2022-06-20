@@ -36,13 +36,13 @@ public class BaseLogApp {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.enableCheckpointing(3000L);
-        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
-        env.setStateBackend(new FsStateBackend("hdfs://master:8020/baselogck"));
-        System.setProperty("HADOOP_USER_NAME","hadoop");
+//        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
+//        env.setStateBackend(new FsStateBackend("hdfs://master:8020/baselogck"));
+//        System.setProperty("HADOOP_USER_NAME","hadoop");
         String topic = "ods_base_log";
         String groupid = "test";
         env.setParallelism(1);
-        DataStreamSource<String> dss = env.addSource(MyKafkaUtil.getKafkaSource(topic, groupid).setStartFromTimestamp(1647569000111L));
+        DataStreamSource<String> dss = env.addSource(MyKafkaUtil.getKafkaSource(topic, groupid).setStartFromEarliest());
         KeyedStream<String, String> keyedStream = dss.keyBy(f -> {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode jsonNode = objectMapper.readValue(f, JsonNode.class);
